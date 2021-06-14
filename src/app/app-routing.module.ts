@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CategorieComponent } from './pages/categorie/categorie.component';
 import { ChiSiamoComponent } from './pages/chi-siamo/chi-siamo.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path:'chi-siamo',
     component: ChiSiamoComponent
+  },
+  {
+    path:'categorie',
+    component: CategorieComponent
   },
   {
     path: '**', //Wildcard route - generico

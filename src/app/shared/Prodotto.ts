@@ -26,4 +26,12 @@ export class Prodotto{
         this.ingredienti = ingredienti;
     }
 
+    stringaIngredienti():string{
+        let str:string = '';
+        for (let i = 0; i < this.ingredienti.length-1; i++) {
+            str =  str + " " + this.ingredienti[i] + ", " ;
+        }
+        return str + " " + this.ingredienti[this.ingredienti.length-1];
+    }
+
 }

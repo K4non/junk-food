@@ -1,9 +1,11 @@
-
 import { Component, OnInit } from '@angular/core';
 import { RistorantiService } from 'src/app/services/ristoranti.service';
 import { Router } from '@angular/router';
 import { allRestaurants } from '../../shared/food';
 import { Ristorante } from 'src/app/shared/Ristorante';
+import {MatDialog} from '@angular/material/dialog';
+import { EntryDialogComponent } from 'src/app/entry-components/entry-dialog/entry-dialog.component';
+import { Prodotto } from 'src/app/shared/Prodotto';
 
 @Component({
   selector: 'app-restaurant-viewer',
@@ -15,7 +17,7 @@ export class RestaurantViewerComponent implements OnInit {
   //Il ! permette di evitare di inizializzarla nel costruttore o direttamente qua
   foodList!: Ristorante[];   // = allRestaurants.getRistoranti()
 
-  constructor(private router:Router, private serviceRistoranti: RistorantiService) {}
+  constructor(private router:Router, private serviceRistoranti: RistorantiService,public dialog: MatDialog) {}
 
   str : string = '';
   
@@ -28,5 +30,12 @@ export class RestaurantViewerComponent implements OnInit {
       this.str = msj;
     });
   }
+
+  
+  openDialog(menu:Prodotto[]) {
+    this.dialog.open(EntryDialogComponent, {
+      data: menu
+    });
+}
 
 }
