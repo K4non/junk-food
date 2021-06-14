@@ -1,29 +1,16 @@
 
 
 <div class="viewer-container">
-<!--     
-    <div *ngIf="i === undefined">No restaurant specialized in this meat BRO</div> -->
-
-    <!-- <div class="restaurant-card" *ngFor = "let i of foodList|search:str"> 
-        
-        <div *ngIf="i; then thenBlock else elseBlock"></div>
-
-        <ng-template #thenBlock><h1>{{i.id}} {{i.nome}} {{i.cucina}}</h1></ng-template>
-        <ng-template #elseBlock><h1>OOOOOOH</h1></ng-template>
-
-    </div> -->
-
     <div class="content" *ngIf='foodList | search:str; let list'> <!-- search:str permette di filtrare effettivamente la lista -->
-        <div class="restaurant-box" *ngFor='let i of list'>
-            <h1>{{i.id}} {{i.nome}} {{i.cucina}}</h1>
-        </div>
-        <div class="noResult" *ngIf='list.length === 0'>
+        <div class="restaurant-box"  (click)="openDialog(i.getMenu())" *ngFor='let i of list'>
+            {{i.getNome()}} {{i.getCucina()}} <!-- {{(i.menu)[0].nome}}-->
             
+        </div>
+
+        <!-- visualizzazione immagine "errore" -->
+        <div class="noResult" *ngIf='list.length === 0'>
             <img class="image" style="height: auto; width: 550px;" src="../../../assets/drakeNothingHere.png">
             <p class="text">No Results</p>
-
-            <!-- visualizzazione immagine "errore" -->
-
         </div>
     </div>
       

@@ -5,7 +5,10 @@ import { Ristorante } from "./Ristorante";
 
 
 const prodotto1 = new Prodotto(1, "Canguro alla brace", ["canguro", "patate", "sale", "riso"]);
-const risto1 = new Ristorante(1, "Cangarooo", "canguro", "Via volturno 15, 21500 Milano", [prodotto1]);
+const prodotto12 = new Prodotto(2, "Canguro al forno", ["canguro", "patate", "sale", "pepe"]);
+const risto1 = new Ristorante(1, "Cangarooo", "canguro", "Via volturno 15, 21500 Milano", [prodotto1, prodotto12]);
+
+
 
 const prodotto2 = new Prodotto(2, "Coccodrilo alla spiedo", ["coccodrillo", "patate", "curry", "olio", "cipolla"]);
 const risto2 = new Ristorante(2, "Crocco-Gnam", "coccodrillo", "Via Messaggero 1, 21500 Milano", [prodotto2]);

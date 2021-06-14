@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { EntryDialogComponent } from '../../entry-dialog/entry-dialog.component';
+import { EntryDialogComponent } from '../../entry-components/entry-dialog/entry-dialog.component';
 
 @Component({
   selector: 'app-pagina-ristorante',

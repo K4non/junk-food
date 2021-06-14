@@ -19,13 +19,14 @@ import { PaginaRistoranteComponent } from './pages/pagina-ristorante/pagina-rist
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchPipe } from './pipes/search.pipe';
-
+import {EntryDialogComponent} from './entry-components/entry-dialog/entry-dialog.component';
 import { RestaurantViewerComponent } from './components/restaurant-viewer/restaurant-viewer.component';
 
 import { SearchBarInizialeComponent } from './components/search-bar-iniziale/search-bar-iniziale.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
 import { CarouselGalleryComponent } from './components/carousel-gallery/carousel-gallery.component';
 import { ChiSiamoComponent } from './pages/chi-siamo/chi-siamo.component';
+import { CategorieComponent } from './pages/categorie/categorie.component';
 
 @NgModule({
   declarations: [
@@ -42,13 +43,14 @@ import { ChiSiamoComponent } from './pages/chi-siamo/chi-siamo.component';
     SearchComponent,
     PaginaRistoranteComponent,
     SearchPipe,
-
+    EntryDialogComponent,
     RestaurantViewerComponent,
 
     SearchBarInizialeComponent,
       GalleryComponent,
       CarouselGalleryComponent,
       ChiSiamoComponent,
+      CategorieComponent,
 
 
   ],
