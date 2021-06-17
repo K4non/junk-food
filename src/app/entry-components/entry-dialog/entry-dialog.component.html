@@ -36,14 +36,14 @@
       <label>Kg:</label>
       <div class="row">
         <div class="col-lg-4 mt-2">
-          <button class="col-lg-12 btn btn-dark" (click)="decrease()">-</button>
+          <button class="col-lg-12 btn btn-dark" (click)="decrease(i)">-</button>
         </div>
         <div class="col-lg-4 mt-2">
           <input class="col-lg-12" [(ngModel)]="counterN" type="text" name="{{i.getId()}}}" id="{{i.getId()}}}"
             placeholder="0">
         </div>
         <div class="col-lg-4 mt-2">
-          <button class="col-lg-12 btn btn-dark" (click)="increase()">+</button>
+          <button class="col-lg-12 btn btn-dark" (click)="increase(i)">+</button>
         </div>
       </div>
     </div>

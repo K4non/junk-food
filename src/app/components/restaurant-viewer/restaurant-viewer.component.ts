@@ -32,9 +32,9 @@ export class RestaurantViewerComponent implements OnInit {
   }
 
 
-  openDialog(menu: Prodotto[]) {
+  openDialog(ristorante: Ristorante) {
     this.dialog.open(EntryDialogComponent, {
-      data: menu
+      data: ristorante
     });
   }
 

@@ -1,7 +1,7 @@
 <div class="viewer-container">
     <div class="content" *ngIf='foodList | search:str; let list'>
-        <!-- search:str permette di filtrare effettivamente la lista -->
-        <div class="restaurant-box" (click)="openDialog(i.getMenu())" *ngFor='let i of list'
+        <!-- search:str permette di filtrare effettivamente la lista , sotto cambio i.getMenu() con i -->
+        <div class="restaurant-box" (click)="openDialog(i)" *ngFor='let i of list'
             [style.backgroundImage]="'url(' + i.getImg() + ')'">
             <div class="restaurant-name text">
                 {{i.getNome()}}
