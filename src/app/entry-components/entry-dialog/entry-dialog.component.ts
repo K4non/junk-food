@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Prodotto } from 'src/app/shared/Prodotto';
 
 
@@ -10,14 +10,25 @@ import { Prodotto } from 'src/app/shared/Prodotto';
   styleUrls: ['./entry-dialog.component.scss']
 })
 export class EntryDialogComponent implements OnInit {
-  listaProdotti:Prodotto[];
-  
+  listaProdotti: Prodotto[];
+  counterN: number = 0;
+
   constructor(@Inject(MAT_DIALOG_DATA) public menuRistorante: Prodotto[]) {
     this.listaProdotti = this.menuRistorante;
-   
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+  increase() {
+    this.counterN++;
+  }
+
+  decrease() {
+    this.counterN--;
+    if (this.counterN < 0) {
+      this.counterN = 0;
+    }
+    return this.counterN;
   }
 
 }

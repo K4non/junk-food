@@ -1,10 +1,15 @@
-
-
 <div class="viewer-container">
-    <div class="content" *ngIf='foodList | search:str; let list'> <!-- search:str permette di filtrare effettivamente la lista -->
-        <div class="restaurant-box"  (click)="openDialog(i.getMenu())" *ngFor='let i of list'>
-            {{i.getNome()}} {{i.getCucina()}} <!-- {{(i.menu)[0].nome}}-->
-            
+    <div class="content" *ngIf='foodList | search:str; let list'>
+        <!-- search:str permette di filtrare effettivamente la lista -->
+        <div class="restaurant-box" (click)="openDialog(i.getMenu())" *ngFor='let i of list'
+            [style.backgroundImage]="'url(' + i.getImg() + ')'">
+            <div class="restaurant-name text">
+                {{i.getNome()}}
+            </div>
+            <div class="restaurant-kitchen kitchen">
+                <p>Tipo di cucina: {{i.getCucina()}}</p>
+            </div>
+
         </div>
 
         <!-- visualizzazione immagine "errore" -->
@@ -13,6 +18,6 @@
             <p class="text">No Results</p>
         </div>
     </div>
-      
+
 
 </div>

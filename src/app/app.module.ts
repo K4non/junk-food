@@ -23,9 +23,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchPipe } from './pipes/search.pipe';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
-
-import {EntryDialogComponent} from './entry-components/entry-dialog/entry-dialog.component';
+import { EntryDialogComponent } from './entry-components/entry-dialog/entry-dialog.component';
 import { RestaurantViewerComponent } from './components/restaurant-viewer/restaurant-viewer.component';
 
 import { SearchBarInizialeComponent } from './components/search-bar-iniziale/search-bar-iniziale.component';
@@ -33,6 +33,7 @@ import { GalleryComponent } from './pages/gallery/gallery.component';
 import { CarouselGalleryComponent } from './components/carousel-gallery/carousel-gallery.component';
 import { ChiSiamoComponent } from './pages/chi-siamo/chi-siamo.component';
 import { CategorieComponent } from './pages/categorie/categorie.component';
+
 
 
 @NgModule({
@@ -53,10 +54,10 @@ import { CategorieComponent } from './pages/categorie/categorie.component';
     RestaurantViewerComponent,
     SearchBarInizialeComponent,
 
-      GalleryComponent,
-      CarouselGalleryComponent,
-      ChiSiamoComponent,
-      CategorieComponent,
+    GalleryComponent,
+    CarouselGalleryComponent,
+    ChiSiamoComponent,
+    CategorieComponent,
 
 
   ],
@@ -69,6 +70,8 @@ import { CategorieComponent } from './pages/categorie/categorie.component';
     MatDialogModule,
     FormsModule,  //si puo anche togliere? Forse serve per l'ordine
     ReactiveFormsModule,
+    MatCheckboxModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

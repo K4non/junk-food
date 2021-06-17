@@ -1,57 +1,56 @@
 import { Prodotto } from "./Prodotto";
 
 
-export class Ristorante{
-    constructor(private id:number, private nome:string, private cucina:string,
-                private indirizzo:string, private menu:Prodotto[]){
-                // private img1:string, private img2:string){
-
+export class Ristorante {
+    constructor(private id: number, private nome: string, private cucina: string,
+        private indirizzo: string, private menu: Prodotto[],
+        private img: string) {
     }
- 
 
-    getId(){
+
+    getId() {
         return this.id;
     }
 
-    getNome(){
+    getNome() {
         return this.nome;
     }
 
-    setNome(nome:string){
+    setNome(nome: string) {
         this.nome = nome;
     }
 
-    getCucina(){
+    getCucina() {
         return this.cucina;
     }
 
-    setCucina(cucina:string){
+    setCucina(cucina: string) {
         this.cucina = cucina;
     }
 
-    getIndirizzo(){
+    getIndirizzo() {
         return this.indirizzo;
     }
 
-    setIndirizzo(indirizzo:string){
+    setIndirizzo(indirizzo: string) {
         this.indirizzo = indirizzo;
     }
 
-    getMenu(){
+    getMenu() {
         return this.menu;
     }
 
-    setMenu(menu:Prodotto[]){
+    setMenu(menu: Prodotto[]) {
         this.menu = menu;
     }
 
-    // getImg1(){
-    //     return this.img1;
-    // }
+    getImg() {
+        return this.img;
+    }
 
-    // setImg1(img1:string){
-    //     this.img1 = img1;
-    // }
+    setImg(img: string) {
+        this.img = img;
+    }
 
     // getImg2(){
     //     return this.img2;
@@ -61,5 +60,5 @@ export class Ristorante{
     //     this.img2 = img2;
     // }
 
-    
+
 }
