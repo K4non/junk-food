@@ -8,7 +8,7 @@ export class Ristorante {
     }
 
 
-    getId() {
+    getId() :number{
         return this.id;
     }
 

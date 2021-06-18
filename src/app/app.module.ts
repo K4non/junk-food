@@ -33,6 +33,7 @@ import { GalleryComponent } from './pages/gallery/gallery.component';
 import { CarouselGalleryComponent } from './components/carousel-gallery/carousel-gallery.component';
 import { ChiSiamoComponent } from './pages/chi-siamo/chi-siamo.component';
 import { CategorieComponent } from './pages/categorie/categorie.component';
+import { CarrelloComponent } from './components/carrello/carrello.component';
 
 
 
@@ -58,6 +59,7 @@ import { CategorieComponent } from './pages/categorie/categorie.component';
     CarouselGalleryComponent,
     ChiSiamoComponent,
     CategorieComponent,
+    CarrelloComponent,
 
 
   ],
