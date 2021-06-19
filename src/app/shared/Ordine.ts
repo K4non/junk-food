@@ -13,7 +13,15 @@ export class Ordine{
         return this.prodotto.getNome();
     }
 
+    getQuantitaProdotto(){
+        return this.quantitaProdotto;
+    }
+    
     calcolaPrezzoPerProdotto(){
         return this.prodotto.getPrezzo() * this.quantitaProdotto;
+    }
+
+    updateQuantita(num:number):void{
+        this.quantitaProdotto+=num;
     }
 }

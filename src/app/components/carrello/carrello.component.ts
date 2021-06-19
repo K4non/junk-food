@@ -8,14 +8,20 @@ import { CarrelloService } from 'src/app/services/carrello.service';
 })
 export class CarrelloComponent implements OnInit {
   carrello!:any;
+  
   constructor(private carrelloService:CarrelloService) { }
 
   ngOnInit(): void {
     this.carrelloService.$carrello.subscribe(tr => {
       this.carrello = tr;
+      
     });
 
-    console.log(this.carrello.visualCarrello());
+    
   }
 
+
+  chiama(){
+    this.carrello.visualCarrello();
+  }
 }

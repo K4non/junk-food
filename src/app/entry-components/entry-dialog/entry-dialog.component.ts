@@ -15,15 +15,16 @@ import { CarrelloService } from 'src/app/services/carrello.service';
 })
 export class EntryDialogComponent implements OnInit {
   listaProdotti: Prodotto[];
-  carrello : Carrello;
-  counterN: number = 0;
+  ordine : Ordine[] = [];
+  counterN: number = 2;
   ristorante:Ristorante;
   myMapProdottoQuantita = new Map();
 
   constructor(@Inject(MAT_DIALOG_DATA) public risto: Ristorante, private carrelloService: CarrelloService) {
     this.ristorante = risto;
     this.listaProdotti = this.ristorante.getMenu();
-    this.carrello = new Carrello();
+    
+    
   }
 
   ngOnInit(): void { }
@@ -32,12 +33,14 @@ export class EntryDialogComponent implements OnInit {
     if(this.myMapProdottoQuantita.has(i.getId())){
       let countP = this.myMapProdottoQuantita.get(i.getId());
       countP++;
-      console.log(countP);
       this.myMapProdottoQuantita.set(i.getId(), countP);
 
     }else{
       this.myMapProdottoQuantita.set(i.getId(), 1);
     }
+
+    const tmp = document.getElementById("1");
+    console.log(tmp?.innerText);
   }
 
   decrease(i:Prodotto) {
@@ -45,23 +48,21 @@ export class EntryDialogComponent implements OnInit {
       let countP = this.myMapProdottoQuantita.get(i.getId());
       if(countP > 0){
         countP--;
-        console.log(countP);
         this.myMapProdottoQuantita.set(i.getId(), countP);
       }
     }
   }
 
   aggiungiOrdine(){
-    this.myMapProdottoQuantita.forEach((value:any, key:any) => {
-      // ordini:Ordine = new Ordine(this.ristorante.getNome(), );
-      for(let i = 0; i < this.listaProdotti.length; i++){
-        if(this.myMapProdottoQuantita.has(this.listaProdotti[i].getId())){
-            this.carrello.pushOrdini(new Ordine(this.ristorante.getNome(), this.listaProdotti[i], value));
-        }
+    
+    for(let i = 0; i < this.listaProdotti.length; i++){
+      if(this.myMapProdottoQuantita.has(this.listaProdotti[i].getId())){
+          this.ordine.push(new Ordine(this.ristorante.getNome(), this.listaProdotti[i], this.myMapProdottoQuantita.get(this.listaProdotti[i].getId())));
       }
-    });
+    }
 
-    this.carrelloService.updateCarrello(this.carrello);
-    console.log("inviato");
+
+    this.carrelloService.updateCarrello(this.ristorante.getNome(), this.ordine);
+    
   }
 }

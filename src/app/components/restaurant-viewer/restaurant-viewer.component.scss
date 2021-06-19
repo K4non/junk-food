@@ -14,9 +14,12 @@
 .viewer-container {
     margin-top: 20px;
     width: 100%;
+    display: flex;
+    flex-direction: row;
 }
 
 .content {
+    width: 70%;
     display: flex;
     flex-wrap: wrap;
     // justify-content: space-between;
@@ -67,4 +70,8 @@
     -webkit-text-stroke-color: black;
     font-size: 1.5rem;
 
+}
+
+.carrello{
+    text-align: center;
 }
