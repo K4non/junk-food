@@ -6,40 +6,31 @@ export class Prodotto {
 
     }
 
-    getId() {
+    getId():number{
         return this.id;
     }
 
-    getNome() {
+    getNome():string{
         return this.nome;
     }
 
-    setNome(nome: string) {
+    setNome(nome: string):void{
         this.nome = nome;
     }
 
-    getPrezzo() {
+    getPrezzo():number{
         return this.prezzo;
     }
 
-    setPrezzo(prezzo: number) {
+    setPrezzo(prezzo: number):void{
         this.prezzo = prezzo;
     }
 
-    getIngredienti() {
+    getIngredienti():string[]{
         return this.ingredienti;
     }
 
-    setIngredienti(ingredienti: string[]) {
+    setIngredienti(ingredienti: string[]):void{
         this.ingredienti = ingredienti;
     }
-
-    // stringaIngredienti(): string {
-    //     let str: string = '';
-    //     for (let i = 0; i < this.ingredienti.length - 1; i++) {
-    //         str = str + " " + this.ingredienti[i] + ", ";
-    //     }
-    //     return str + " " + this.ingredienti[this.ingredienti.length - 1];
-    // }
-
 }

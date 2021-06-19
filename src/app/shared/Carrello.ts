@@ -39,7 +39,7 @@ export class Carrello{
         });
     }
 
-    getStruttura(){
+    getStruttura():any{
         return this.strutturaOrdini;
     }
 }

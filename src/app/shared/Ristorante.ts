@@ -8,57 +8,47 @@ export class Ristorante {
     }
 
 
-    getId() :number{
+    getId():number{
         return this.id;
     }
 
-    getNome() {
+    getNome():string{
         return this.nome;
     }
 
-    setNome(nome: string) {
+    setNome(nome: string):void{
         this.nome = nome;
     }
 
-    getCucina() {
+    getCucina():string{
         return this.cucina;
     }
 
-    setCucina(cucina: string) {
+    setCucina(cucina: string):void{
         this.cucina = cucina;
     }
 
-    getIndirizzo() {
+    getIndirizzo():string{
         return this.indirizzo;
     }
 
-    setIndirizzo(indirizzo: string) {
+    setIndirizzo(indirizzo: string):void{
         this.indirizzo = indirizzo;
     }
 
-    getMenu() {
+    getMenu():Prodotto[]{
         return this.menu;
     }
 
-    setMenu(menu: Prodotto[]) {
+    setMenu(menu: Prodotto[]):void{
         this.menu = menu;
     }
 
-    getImg() {
+    getImg():string{
         return this.img;
     }
 
-    setImg(img: string) {
+    setImg(img: string):void{
         this.img = img;
     }
-
-    // getImg2(){
-    //     return this.img2;
-    // }
-
-    // setImg2(img2:string){
-    //     this.img2 = img2;
-    // }
-
-
 }

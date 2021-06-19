@@ -13,7 +13,7 @@ export class BEat {
         return this.restaurants;
     }
 
-    setRistoranti(risto:Ristorante[]){
+    setRistoranti(risto:Ristorante[]):void{
         this.restaurants = risto;
     }
 }

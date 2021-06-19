@@ -5,19 +5,19 @@ export class Ordine{
         
     }
 
-    getNomeRistorante(){
+    getNomeRistorante():string{
         return this.nomeRistorante;
     }
 
-    getNomeProdotto(){
+    getNomeProdotto():string{
         return this.prodotto.getNome();
     }
 
-    getQuantitaProdotto(){
+    getQuantitaProdotto():number{
         return this.quantitaProdotto;
     }
     
-    calcolaPrezzoPerProdotto(){
+    calcolaPrezzoPerProdotto():number{
         return this.prodotto.getPrezzo() * this.quantitaProdotto;
     }
 
