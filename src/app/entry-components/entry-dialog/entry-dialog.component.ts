@@ -39,8 +39,6 @@ export class EntryDialogComponent implements OnInit {
       this.myMapProdottoQuantita.set(i.getId(), 1);
     }
 
-    const tmp = document.getElementById("1");
-    console.log(tmp?.innerText);
   }
 
   decrease(i:Prodotto) {
@@ -54,15 +52,11 @@ export class EntryDialogComponent implements OnInit {
   }
 
   aggiungiOrdine(){
-    
     for(let i = 0; i < this.listaProdotti.length; i++){
       if(this.myMapProdottoQuantita.has(this.listaProdotti[i].getId())){
           this.ordine.push(new Ordine(this.ristorante.getNome(), this.listaProdotti[i], this.myMapProdottoQuantita.get(this.listaProdotti[i].getId())));
       }
     }
-
-
     this.carrelloService.updateCarrello(this.ristorante.getNome(), this.ordine);
-    
   }
 }

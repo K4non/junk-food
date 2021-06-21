@@ -30,15 +30,6 @@ export class Carrello{
         }
     }
 
-    visualCarrello():void{
-        this.strutturaOrdini.forEach((value:Ordine[], key:any) => {
-            console.log("key->" + key);
-            value.forEach(ordini => {
-                console.log("->" + ordini.getNomeRistorante() + " | " + ordini.getNomeProdotto() + " | " + ordini.calcolaPrezzoPerProdotto() + " | " + ordini.getQuantitaProdotto());
-            });
-        });
-    }
-
     getStruttura():any{
         return this.strutturaOrdini;
     }

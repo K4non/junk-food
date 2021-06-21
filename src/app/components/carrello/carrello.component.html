@@ -1,4 +1,7 @@
 <h1>carrello works!</h1>
-
-
-<button (click)="chiama()">chiama </button>
+<div *ngFor="let i of struttura | keyvalue">
+    {{i.key}}
+    <div *ngFor="let j of i.value">
+        Piatto: {{j.getNomeProdotto()}}, prezzo totale: {{j.calcolaPrezzoPerProdotto()}}euro, quantità: {{j.getQuantitaProdotto()}}
+    </div>
+</div>
