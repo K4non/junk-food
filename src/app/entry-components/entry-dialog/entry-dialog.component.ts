@@ -1,9 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Prodotto } from 'src/app/shared/Prodotto';
 import { Ordine } from 'src/app/shared/Ordine';
 import { Ristorante } from 'src/app/shared/Ristorante';
-import { Carrello } from 'src/app/shared/Carrello';
 import { CarrelloService } from 'src/app/services/carrello.service';
 
 
@@ -19,7 +18,7 @@ export class EntryDialogComponent implements OnInit {
   ristorante:Ristorante;
   myMapProdottoQuantita = new Map();
 
-  constructor(@Inject(MAT_DIALOG_DATA) public risto: Ristorante, private carrelloService: CarrelloService) {
+  constructor(@Inject(MAT_DIALOG_DATA) public risto: Ristorante, private carrelloService: CarrelloService, public dialog: MatDialog) {
     this.ristorante = risto;
     this.listaProdotti = this.ristorante.getMenu();
     
@@ -56,7 +55,6 @@ export class EntryDialogComponent implements OnInit {
   }
 
   aggiungiOrdine(){
-
     if(this.myMapProdottoQuantita.size != 0){
       this.listaProdotti.forEach(prodotto => {
         if(this.myMapProdottoQuantita.has(prodotto.getId())){
@@ -65,6 +63,7 @@ export class EntryDialogComponent implements OnInit {
       });
 
       this.carrelloService.updateCarrello(this.ristorante.getNome(), this.ordine);
+      this.dialog.closeAll();
     }
     
   }

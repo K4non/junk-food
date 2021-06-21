@@ -14,7 +14,6 @@ export class SearchComponent implements OnInit {
   constructor(private router:Router, private serviceRistoranti: RistorantiService) { }
   
   ngOnInit(): void {
-    // this.search.valueChanges.subscribe(value => this.searchEmitter.emit(value));
     this.serviceRistoranti.$getStringaSearch.subscribe(msj =>{ 
       this.text.setValue(msj);
     });

@@ -11,6 +11,7 @@ import { Ordine } from 'src/app/shared/Ordine';
 export class CarrelloComponent implements OnInit {
   carrello!:Carrello;
   struttura!:Map<string, Ordine[]>;
+  //struttura:any;
   constructor(private carrelloService:CarrelloService) { }
 
   ngOnInit(): void {

@@ -6,7 +6,6 @@ import { GalleryComponent } from './pages/gallery/gallery.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { PageOneComponent } from './pages/page-one/page-one.component';
-import { PaginaRistoranteComponent } from './pages/pagina-ristorante/pagina-ristorante.component';
 
 const routes: Routes = [
   {
@@ -21,10 +20,6 @@ const routes: Routes = [
     path: '', //Redirect all'homepage in caso di path vuoto
     redirectTo: '/homepage',
     pathMatch: 'full'
-  },
-  {
-    path:'pagina-ristorante',
-    component: PaginaRistoranteComponent
   },
   {
     path:'gallery',

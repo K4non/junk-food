@@ -17,8 +17,6 @@ export class SearchBarInizialeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // search = new FormControl('');
-
   updateString(){
     console.log(this.text.value + "  da search component");
     this.serviceRistoranti.updateStringaSearch(this.text.value);

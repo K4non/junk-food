@@ -15,15 +15,14 @@ import { Prodotto } from 'src/app/shared/Prodotto';
 export class RestaurantViewerComponent implements OnInit {
 
   //Il ! permette di evitare di inizializzarla nel costruttore o direttamente qua
-  foodList!: Ristorante[];   // = allRestaurants.getRistoranti()
+  foodList!: Ristorante[];
+  str: string = '';
 
   constructor(private router: Router, private serviceRistoranti: RistorantiService, public dialog: MatDialog) { }
 
-  str: string = '';
-
   ngOnInit(): void {
 
-    this.foodList = allRestaurants.getRistoranti()
+    this.foodList = allRestaurants.getRistoranti();
 
     //Sottoscrizione all'observable BehaviorSubject proveniente dal servizio ristoranti 
     this.serviceRistoranti.$getStringaSearch.subscribe(msj => {

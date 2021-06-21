@@ -13,7 +13,6 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { PageOneComponent } from './pages/page-one/page-one.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SearchComponent } from './components/search/search.component';
-import { PaginaRistoranteComponent } from './pages/pagina-ristorante/pagina-ristorante.component';
 
 
 //Import MODULI ESTERNI (Librerie)
@@ -49,7 +48,6 @@ import { CarrelloComponent } from './components/carrello/carrello.component';
     PageOneComponent,
     NavbarComponent,
     SearchComponent,
-    PaginaRistoranteComponent,
     SearchPipe,
     EntryDialogComponent,
     RestaurantViewerComponent,
