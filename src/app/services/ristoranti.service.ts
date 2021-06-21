@@ -7,10 +7,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class RistorantiService {
   
   private stringaSearch = new BehaviorSubject<string>('');
-
-  // getSubject () : Observable<string> {
-  //   return this.stringaSearch;
-  // }
  
   $getStringaSearch = this.stringaSearch;  //$ per definire un subject
 

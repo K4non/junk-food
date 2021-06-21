@@ -15,13 +15,12 @@ export class SearchComponent implements OnInit {
   
   ngOnInit(): void {
     // this.search.valueChanges.subscribe(value => this.searchEmitter.emit(value));
-    this.serviceRistoranti.$getStringaSearch.subscribe(msj =>{  //chi si vuole suscrivere a me? metti in parametro
+    this.serviceRistoranti.$getStringaSearch.subscribe(msj =>{ 
       this.text.setValue(msj);
     });
   }
 
   updateString(){
-    console.log(this.text + "  da search component");
     this.serviceRistoranti.updateStringaSearch(this.text.value);
   }
 

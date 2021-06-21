@@ -16,7 +16,6 @@ import { CarrelloService } from 'src/app/services/carrello.service';
 export class EntryDialogComponent implements OnInit {
   listaProdotti: Prodotto[];
   ordine : Ordine[] = [];
-  counterN: number = 2;
   ristorante:Ristorante;
   myMapProdottoQuantita = new Map();
 
@@ -31,14 +30,15 @@ export class EntryDialogComponent implements OnInit {
 
   increase(i:Prodotto) {
     if(this.myMapProdottoQuantita.has(i.getId())){
-      let countP = this.myMapProdottoQuantita.get(i.getId());
+      let countP:number = this.myMapProdottoQuantita.get(i.getId());
       countP++;
       this.myMapProdottoQuantita.set(i.getId(), countP);
 
     }else{
+      console.log("-->" + this.myMapProdottoQuantita.get(i.getId()));
       this.myMapProdottoQuantita.set(i.getId(), 1);
     }
-
+    
   }
 
   decrease(i:Prodotto) {
@@ -46,17 +46,26 @@ export class EntryDialogComponent implements OnInit {
       let countP = this.myMapProdottoQuantita.get(i.getId());
       if(countP > 0){
         countP--;
-        this.myMapProdottoQuantita.set(i.getId(), countP);
+        if(countP == 0){
+          this.myMapProdottoQuantita.delete(i.getId());
+        }else{
+          this.myMapProdottoQuantita.set(i.getId(), countP);
+        }
       }
     }
   }
 
   aggiungiOrdine(){
-    for(let i = 0; i < this.listaProdotti.length; i++){
-      if(this.myMapProdottoQuantita.has(this.listaProdotti[i].getId())){
-          this.ordine.push(new Ordine(this.ristorante.getNome(), this.listaProdotti[i], this.myMapProdottoQuantita.get(this.listaProdotti[i].getId())));
+
+    if(this.myMapProdottoQuantita.size != 0){
+      this.listaProdotti.forEach(prodotto => {
+        if(this.myMapProdottoQuantita.has(prodotto.getId())){
+          this.ordine.push(new Ordine(this.ristorante.getNome(), prodotto, this.myMapProdottoQuantita.get(prodotto.getId())));
       }
+      });
+
+      this.carrelloService.updateCarrello(this.ristorante.getNome(), this.ordine);
     }
-    this.carrelloService.updateCarrello(this.ristorante.getNome(), this.ordine);
+    
   }
 }
