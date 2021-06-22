@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Form, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RistorantiService } from 'src/app/services/ristoranti.service';
 
@@ -10,19 +10,19 @@ import { RistorantiService } from 'src/app/services/ristoranti.service';
 })
 export class SearchBarInizialeComponent implements OnInit {
 
-  text = new FormControl('');
+  text:FormControl = new FormControl('');
 
   constructor(private router:Router, private serviceRistoranti: RistorantiService) { }
 
   ngOnInit(): void {
   }
 
-  updateString(){
+  updateString():void{
     console.log(this.text.value + "  da search component");
     this.serviceRistoranti.updateStringaSearch(this.text.value);
   }
 
-  resetText() {
+  resetText():void{
     this.text.setValue("");
   }
 

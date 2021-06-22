@@ -9,9 +9,9 @@ import {RistorantiService} from '../../services/ristoranti.service';
 })
 export class SearchComponent implements OnInit {
 
-  text = new FormControl('');
+  text:FormControl = new FormControl('');
 
-  constructor(private router:Router, private serviceRistoranti: RistorantiService) { }
+  constructor(private serviceRistoranti: RistorantiService) { }
   
   ngOnInit(): void {
     this.serviceRistoranti.$getStringaSearch.subscribe(msj =>{ 
@@ -19,11 +19,11 @@ export class SearchComponent implements OnInit {
     });
   }
 
-  updateString(){
+  updateString():void{
     this.serviceRistoranti.updateStringaSearch(this.text.value);
   }
 
-  resetText() {
+  resetText():void{
     this.text.setValue("");
     this.serviceRistoranti.updateStringaSearch(this.text.value);
   }

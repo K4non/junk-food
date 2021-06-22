@@ -11,13 +11,12 @@ import { Ordine } from 'src/app/shared/Ordine';
 export class CarrelloComponent implements OnInit {
   carrello!:Carrello;
   struttura!:Map<string, Ordine[]>;
-  //struttura:any;
   constructor(private carrelloService:CarrelloService) { }
 
   ngOnInit(): void {
-    this.carrelloService.$carrello.subscribe(tr => {
-      this.carrello = tr;
-      this.struttura = tr.strutturaOrdini;
+    this.carrelloService.$carrello.subscribe(carrelloDalServizio => {
+      this.carrello = carrelloDalServizio;
+      this.struttura = carrelloDalServizio.strutturaOrdini;
     });
   }
 }

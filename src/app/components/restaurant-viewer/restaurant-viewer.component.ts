@@ -15,10 +15,10 @@ import { Prodotto } from 'src/app/shared/Prodotto';
 export class RestaurantViewerComponent implements OnInit {
 
   //Il ! permette di evitare di inizializzarla nel costruttore o direttamente qua
-  foodList!: Ristorante[];
-  str: string = '';
+  foodList!:Ristorante[];
+  str:string = '';
 
-  constructor(private router: Router, private serviceRistoranti: RistorantiService, public dialog: MatDialog) { }
+  constructor(private serviceRistoranti: RistorantiService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
 

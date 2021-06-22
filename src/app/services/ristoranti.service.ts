@@ -12,7 +12,7 @@ export class RistorantiService {
 
   constructor() { }
 
-  updateStringaSearch(str:string){
+  updateStringaSearch(str:string):void{
     this.stringaSearch.next(str); //value = ''; -> value = str
   }
 }
