@@ -27,25 +27,25 @@ export class EntryDialogComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  increase(i:Prodotto) {
+  increase(i:Prodotto):void{
     if(this.myMapProdottoQuantita.has(i.getId())){
       let countP:number = this.myMapProdottoQuantita.get(i.getId());
       countP++;
       this.myMapProdottoQuantita.set(i.getId(), countP);
 
     }else{
-      console.log("-->" + this.myMapProdottoQuantita.get(i.getId()));
+      
       this.myMapProdottoQuantita.set(i.getId(), 1);
     }
     
   }
 
-  decrease(i:Prodotto) {
+  decrease(i:Prodotto):void{
     if(this.myMapProdottoQuantita.has(i.getId())){
       let countP = this.myMapProdottoQuantita.get(i.getId());
       if(countP > 0){
         countP--;
-        if(countP == 0){
+        if(countP == 0){  //se il valore della chiave i.getId() è 0 -> allora cancella il prodotto dalla mappa
           this.myMapProdottoQuantita.delete(i.getId());
         }else{
           this.myMapProdottoQuantita.set(i.getId(), countP);
@@ -54,12 +54,12 @@ export class EntryDialogComponent implements OnInit {
     }
   }
 
-  aggiungiOrdine(){
+  aggiungiOrdine():void{
     if(this.myMapProdottoQuantita.size != 0){
       this.listaProdotti.forEach(prodotto => {
         if(this.myMapProdottoQuantita.has(prodotto.getId())){
           this.ordine.push(new Ordine(this.ristorante.getNome(), prodotto, this.myMapProdottoQuantita.get(prodotto.getId())));
-      }
+        }
       });
 
       this.carrelloService.updateCarrello(this.ristorante.getNome(), this.ordine);

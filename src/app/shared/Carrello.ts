@@ -1,7 +1,7 @@
 import { Ordine } from "./Ordine";
 
 export class Carrello{
-    strutturaOrdini:any;
+    private strutturaOrdini:any;
     constructor(){
         this.strutturaOrdini = new Map();
     }
@@ -9,17 +9,19 @@ export class Carrello{
     pushOrdini(ristoranteNome:string, ordiniService:Ordine[]):void{
         let flag:boolean = false;
         if(this.strutturaOrdini.has(ristoranteNome)){
-            let ordini:Ordine[] = this.strutturaOrdini.get(ristoranteNome);
+            let vecchiOrdini:Ordine[] = this.strutturaOrdini.get(ristoranteNome);
 
             ordiniService.forEach(ordineAggiornato => {
-                ordini.forEach(ordine => {
-                    if(ordineAggiornato.getNomeProdotto() == ordine.getNomeProdotto()){
+                vecchiOrdini.forEach(ordine => {
+                    if(ordineAggiornato.getNomeProdotto() == ordine.getNomeProdotto()){ //chiede se nella mappa quel piatto c'è già
                         ordine.updateQuantita(ordineAggiornato.getQuantitaProdotto());
                         flag = true;
                     }
                 });
+
+                //se il piatto non c'è negli ordini vecchi, allora aggiungilo
                 if(flag == false){
-                    ordini.push(ordineAggiornato);
+                    vecchiOrdini.push(ordineAggiornato);
                 }else{
                     flag = false;
                 }

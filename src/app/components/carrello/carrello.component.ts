@@ -16,7 +16,7 @@ export class CarrelloComponent implements OnInit {
   ngOnInit(): void {
     this.carrelloService.$carrello.subscribe(carrelloDalServizio => {
       this.carrello = carrelloDalServizio;
-      this.struttura = carrelloDalServizio.strutturaOrdini;
+      this.struttura = carrelloDalServizio.getStruttura();
     });
   }
 }

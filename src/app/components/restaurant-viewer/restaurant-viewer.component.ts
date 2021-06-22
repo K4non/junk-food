@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { RistorantiService } from 'src/app/services/ristoranti.service';
-import { Router } from '@angular/router';
 import { allRestaurants } from '../../shared/food';
 import { Ristorante } from 'src/app/shared/Ristorante';
 import { MatDialog } from '@angular/material/dialog';
 import { EntryDialogComponent } from 'src/app/entry-components/entry-dialog/entry-dialog.component';
-import { Prodotto } from 'src/app/shared/Prodotto';
+
 
 @Component({
   selector: 'app-restaurant-viewer',

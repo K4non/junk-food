@@ -14,8 +14,8 @@ export class CarrelloService {
 
   constructor() { }
 
-  updateCarrello(risto:string, arrayOrdiniDaDialog:Ordine[]):void{  
-    this.ordiniCarrello.pushOrdini(risto, arrayOrdiniDaDialog); 
+  updateCarrello(nomeRistorante:string, arrayOrdiniDaDialog:Ordine[]):void{  
+    this.ordiniCarrello.pushOrdini(nomeRistorante, arrayOrdiniDaDialog); 
     this.carrello.next(this.ordiniCarrello);
   }
 }
